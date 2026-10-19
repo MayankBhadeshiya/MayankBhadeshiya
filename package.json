@@ -1,0 +1,12 @@
+{
+  "name": "mayankbhadeshiya-profile",
+  "private": true,
+  "type": "module",
+  "description": "GitHub profile README for Mayank Bhadeshiya",
+  "scripts": {
+    "cards": "node scripts/build-cards.mjs"
+  },
+  "devDependencies": {
+    "simple-icons": "^16.35.0"
+  }
+}

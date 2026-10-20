@@ -5,7 +5,7 @@
 <p align="center">
   <a href="mailto:mayankbhadeshiya2@gmail.com"><img src="https://img.shields.io/badge/Email-Say_hi-1c2024?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
   <a href="https://www.linkedin.com/in/mayank-bhadeshiya/"><img src="https://img.shields.io/badge/LinkedIn-mayank--bhadeshiya-087ea4?style=for-the-badge" alt="LinkedIn" /></a>
-  <a href="https://github.com/MayankBhadeshiya/portfolio"><img src="https://img.shields.io/badge/Portfolio-source-4630eb?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Portfolio" /></a>
+  <a href="https://portfolio-eight-lyart-48.vercel.app"><img src="https://img.shields.io/badge/Portfolio-live_site-4630eb?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" /></a>
 </p>
 
 <table>

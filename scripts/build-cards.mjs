@@ -19,6 +19,8 @@ const c = {
   frontend: "#087ea4",
   backend: "#3c873a",
   reactCyan: "#58c4dc",
+  // AI & agentic card accent (a Claude-like terracotta, readable on white).
+  ai: "#c15f3c",
   editor: "#16181d",
   editorRaised: "#23272f",
   editorText: "#e4e7eb",
@@ -176,6 +178,7 @@ function profile() {
     [["p", "  "], ["a", "mobile"], ["p", ": ["], ["s", '"React Native"'], ["p", ", "], ["s", '"Expo"'], ["p", "],"]],
     [["p", "  "], ["a", "web"], ["p", ": ["], ["s", '"React"'], ["p", ", "], ["s", '"Next.js"'], ["p", "],"]],
     [["p", "  "], ["a", "backend"], ["p", ": ["], ["s", '"Node.js"'], ["p", ", "], ["s", '"Firebase"'], ["p", ", "], ["s", '"AWS"'], ["p", "],"]],
+    [["p", "  "], ["a", "ai"], ["p", ": ["], ["s", '"Claude Code"'], ["p", ", "], ["s", '"MCP"'], ["p", ", "], ["s", '"Cursor"'], ["p", "],"]],
     [["p", "  "], ["a", "certified"], ["p", ": ["], ["s", '"AWS SAA"'], ["p", ", "], ["s", '"Meta Front-End"'], ["p", "],"]],
     [["p", "  "], ["f", "ship"], ["p", ": () => "], ["s", '"from sketch to shipped"'], ["p", ","]],
     [["p", "};"]],
@@ -279,15 +282,29 @@ function stack() {
         ["stripe", "Stripe"],
         ["razorpay", "Razorpay"],
         ["paypal", "PayPal"],
+        ["revenuecat", "RevenueCat"],
         ["jest", "Jest"],
         ["githubactions", "CI/CD"],
+        ["git", "Git"],
+      ],
+    },
+    {
+      name: "AI & agentic",
+      color: c.ai,
+      tools: [
         ["claude", "Claude Code"],
+        ["modelcontextprotocol", "MCP servers"],
+        ["claude", "Skills · hooks"],
+        ["expo", "Expo MCP"],
+        ["revenuecat", "RevenueCat MCP"],
+        ["cursor", "Cursor"],
         ["githubcopilot", "Copilot"],
       ],
     },
   ];
 
-  const colW = (W - 24 * 2 - 16 * 3) / 4;
+  const cols = groups.length;
+  const colW = (W - 24 * 2 - 16 * (cols - 1)) / cols;
   const rowH = 34;
   const headH = 58;
   const cardH = headH + 7 * rowH + 18;
@@ -302,7 +319,7 @@ function stack() {
           const ry = y + headH + ti * rowH;
           return `<g class="row" style="animation-delay:${(0.15 + gi * 0.08 + ti * 0.05).toFixed(2)}s">
         ${logo(slug, x + 22, ry, 18)}
-        <text x="${x + 50}" y="${ry + 14}" font-family="${SANS}" font-size="15" fill="${c.ink}">${esc(label)}</text>
+        <text x="${x + 48}" y="${ry + 14}" font-family="${SANS}" font-size="14.5" fill="${c.ink}">${esc(label)}</text>
       </g>`;
         })
         .join("");
@@ -315,7 +332,7 @@ function stack() {
     })
     .join("\n    ");
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Tech stack: mobile, frontend, backend and tooling">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Tech stack: mobile, frontend, backend, payments and tooling, AI and agentic coding">
   <defs>${gridPattern("g")}<clipPath id="r"><rect width="${W}" height="${H}" rx="20"/></clipPath></defs>
   <style>
     .row { opacity: 0; animation: in .6s cubic-bezier(.16,1,.3,1) forwards; }
